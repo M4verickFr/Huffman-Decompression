@@ -54,4 +54,23 @@ public class HuffmanTree {
     public String decode(String binaryString) {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public String toString() {
+        return this.toString(this.root, "");
+    }
+
+    public String toString(HuffmanNode parent, String code) {
+        String res = "";
+        if (parent.isLeaf()) {
+            res += parent.toString()+":"+code+"\n";
+        }
+        if (parent.getLeft() != null) {
+            res += this.toString(parent.getLeft(), code+"0");
+        }
+        if (parent.getRight() != null) {
+            res += this.toString(parent.getRight(),code+"1");
+        }
+        return res;
+    }
 }
