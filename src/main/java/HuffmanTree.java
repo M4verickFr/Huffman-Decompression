@@ -56,10 +56,13 @@ public class HuffmanTree {
 
         String result = "";
         for (char b: binaryChars) {
-            if (b == "0".charAt(0)) {
-                this.moveToLeft();
-            } else {
-                this.moveToRight();
+
+            if(!this.getCurrent().isLeaf()) {
+                if (b == "0".charAt(0)) {
+                    this.moveToLeft();
+                } else {
+                    this.moveToRight();
+                }
             }
 
             if (this.getCurrent().isLeaf()) {
