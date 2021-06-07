@@ -1,9 +1,12 @@
 package main.java;
 
+import java.util.Dictionary;
+
 public class HuffmanDecode {
 
     public HuffmanDecode(String frequencyFilePath, String binaryFilePath) {
-        throw new UnsupportedOperationException();
+        HuffmanFile freqFile = new HuffmanFile(frequencyFilePath);
+        Dictionary frequency = freqFile.readFreq();
     }
 
     public static void main(String[] args) {
