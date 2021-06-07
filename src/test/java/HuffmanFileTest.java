@@ -14,19 +14,19 @@ public class HuffmanFileTest {
         HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_freq.txt");
         Dictionary frequency = file.readFreq();
         Assert.assertEquals("1", frequency.get("b"));
-        Assert.assertEquals("2", frequency.get("!"));
+        Assert.assertEquals("2", frequency.get("o"));
     }
 
     @Test
     public void readBin() {
         HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_comp.txt");
-        Assert.assertEquals("0101111101001110111010000", file.readBin());
+        Assert.assertEquals("010111000111100101", file.readBin());
     }
 
     @Test
     public void writeResult() throws FileNotFoundException {
         HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_result.txt");
-        file.writeResult("Bonjour!!");
+        file.writeResult("bonjour");
 
         String resultString = "";
         File resultFile = new File("src/test/resources/exemple/exemple_result.txt");
@@ -34,7 +34,7 @@ public class HuffmanFileTest {
         while (myReader.hasNextLine()) {
             resultString += myReader.nextLine();
         }
-        Assert.assertEquals("bonjour!!", resultString);
+        Assert.assertEquals("bonjour", resultString);
     }
 
     @Test

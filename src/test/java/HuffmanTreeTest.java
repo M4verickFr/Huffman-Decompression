@@ -48,12 +48,12 @@ public class HuffmanTreeTest {
 
     @Test
     public void decode() {
-        Assert.assertEquals("cba", tree.decode("01110"));
+        Assert.assertEquals("cba", tree.decode("10100"));
     }
 
     @Test
     public void testToString() {
-        String expected = "Node(c:3):0\nNode(a:1):10\nNode(b:2):11\n";
+        String expected = "Node(a:1):00\nNode(b:2):01\nNode(c:3):1\n";
         Assert.assertEquals(expected, tree.toString());
     }
 }
