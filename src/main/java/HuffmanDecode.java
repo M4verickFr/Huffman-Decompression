@@ -12,6 +12,8 @@ public class HuffmanDecode {
 
         HuffmanFile binaryFile = new HuffmanFile(binaryFilePath);
         String binaryString = binaryFile.readBin();
+
+        String result = tree.decode(binaryString);
     }
 
     public static void main(String[] args) {

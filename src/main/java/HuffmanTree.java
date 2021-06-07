@@ -52,7 +52,23 @@ public class HuffmanTree {
     }
 
     public String decode(String binaryString) {
-        throw new UnsupportedOperationException();
+        char[] binaryChars = binaryString.toCharArray();
+
+        String result = "";
+        for (char b: binaryChars) {
+            if (b == "0".charAt(0)) {
+                this.moveToLeft();
+            } else {
+                this.moveToRight();
+            }
+
+            if (this.getCurrent().isLeaf()) {
+                result += this.getCurrent().getCharacter();
+                this.moveToRoot();
+            }
+        }
+
+        return result;
     }
 
     @Override
