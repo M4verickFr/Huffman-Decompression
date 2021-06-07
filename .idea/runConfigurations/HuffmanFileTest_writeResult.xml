@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HuffmanFileTest.writeResult" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="huffman-decode" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="test.java.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="test.java" />
+    <option name="MAIN_CLASS_NAME" value="test.java.HuffmanFileTest" />
+    <option name="METHOD_NAME" value="writeResult" />
+    <option name="TEST_OBJECT" value="method" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

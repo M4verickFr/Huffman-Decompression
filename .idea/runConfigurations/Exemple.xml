@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Exemple" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="main.java.HuffmanDecode" />
+    <module name="huffman-decode" />
+    <option name="PROGRAM_PARAMETERS" value="&quot;$ContentRoot$/src/test/resources/exemple/exemple_freq.txt&quot; &quot;$ContentRoot$/src/test/resources/exemple/exemple_comp.txt&quot;" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="main.java.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
