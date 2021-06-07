@@ -39,7 +39,10 @@ public class HuffmanNode implements Comparable<HuffmanNode>{
 
     @Override public int compareTo(HuffmanNode node)
     {
-        return this.weight - node.weight;
+        if (this.weight != node.weight) {
+            return this.weight - node.weight;
+        }
+        return (this.character + "").compareTo((node.character + ""));
     }
 
     @Override
