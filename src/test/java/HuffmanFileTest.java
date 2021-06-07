@@ -25,6 +25,9 @@ public class HuffmanFileTest {
 
     @Test
     public void writeResult() throws FileNotFoundException {
+        HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_result.txt");
+        file.writeResult("Bonjour!!");
+
         String resultString = "";
         File resultFile = new File("src/test/resources/exemple/exemple_result.txt");
         Scanner myReader = new Scanner(resultFile);
