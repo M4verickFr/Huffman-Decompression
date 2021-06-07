@@ -1,8 +1,12 @@
 package main.java;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Dictionary;
 
 public class HuffmanDecode {
+
+    String result = "";
 
     public HuffmanDecode(String frequencyFilePath, String binaryFilePath) {
         HuffmanFile freqFile = new HuffmanFile(frequencyFilePath);
@@ -13,7 +17,12 @@ public class HuffmanDecode {
         HuffmanFile binaryFile = new HuffmanFile(binaryFilePath);
         String binaryString = binaryFile.readBin();
 
-        String result = tree.decode(binaryString);
+        this.result = tree.decode(binaryString);
+
+        String outputFilePath = HuffmanFile.getOutputFilePath(freqFile);
+        HuffmanFile outputFile = new HuffmanFile(outputFilePath);
+        outputFile.writeResult(this.result);
+
     }
 
     public static void main(String[] args) {

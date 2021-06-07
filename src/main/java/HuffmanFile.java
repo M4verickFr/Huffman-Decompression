@@ -2,6 +2,10 @@ package main.java;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Scanner;
@@ -55,8 +59,21 @@ public class HuffmanFile {
     }
 
     public void writeResult(String result) {
-        throw new UnsupportedOperationException();
+        try {
+            FileWriter fileWriter = new FileWriter(this.file);
+            fileWriter.write(result);
+            fileWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException("main.HuffmanFile caught an IOException");
+        }
     }
 
+    public static String getOutputFilePath(HuffmanFile file) {
+        Path path = Paths.get(file.getPath());
+        String outputFilePath = path.getParent() + "/";
+        outputFilePath += file.getName().split("_")[0];
+        outputFilePath += "_result.txt";
+        return outputFilePath;
+    }
 
 }
