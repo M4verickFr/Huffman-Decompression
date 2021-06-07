@@ -7,11 +7,14 @@ public class HuffmanNode implements Comparable<HuffmanNode>{
     private HuffmanNode right;
 
     public HuffmanNode(String character, String weight) {
-        throw new UnsupportedOperationException();
+        this.character = character.charAt(0);
+        this.weight = Integer.parseInt(weight);
     }
 
     public HuffmanNode(HuffmanNode left, HuffmanNode right) {
-        throw new UnsupportedOperationException();
+        this.left = left;
+        this.right = right;
+        this.weight = left.getWeight() + right.getWeight();
     }
 
     public char getCharacter() {
