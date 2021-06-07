@@ -22,10 +22,14 @@ public class HuffmanDecode {
         String outputFilePath = HuffmanFile.getOutputFilePath(freqFile);
         HuffmanFile outputFile = new HuffmanFile(outputFilePath);
         outputFile.writeResult(this.result);
+    }
 
+    public String getResult() {
+        return result;
     }
 
     public static void main(String[] args) {
-        new HuffmanDecode(args[0], args[1]);
+        HuffmanDecode huffmanDecode = new HuffmanDecode(args[0], args[1]);
+        System.out.println(huffmanDecode.getResult());
     }
 }
