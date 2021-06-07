@@ -40,7 +40,18 @@ public class HuffmanFile {
     }
 
     public String readBin() {
-        throw new UnsupportedOperationException();
+        try {
+            String binString = "";
+            Scanner myReader = new Scanner(this.file);
+            while (myReader.hasNextLine()) {
+                binString += myReader.nextLine();
+            }
+            return binString;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("b");
+            throw new RuntimeException("main.HuffmanFile caught an FileNotFoundException");
+        }
     }
 
     public void writeResult(String result) {

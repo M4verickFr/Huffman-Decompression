@@ -9,6 +9,9 @@ public class HuffmanDecode {
         Dictionary frequency = freqFile.readFreq();
 
         HuffmanTree tree = new HuffmanTree(frequency);
+
+        HuffmanFile binaryFile = new HuffmanFile(binaryFilePath);
+        String binaryString = binaryFile.readBin();
     }
 
     public static void main(String[] args) {
