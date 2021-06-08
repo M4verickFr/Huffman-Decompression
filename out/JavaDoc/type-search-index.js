@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"main.java","l":"HuffmanDecode"},{"p":"main.java","l":"HuffmanFile"},{"p":"test.java","l":"HuffmanFileTest"},{"p":"main.java","l":"HuffmanNode"},{"p":"test.java","l":"HuffmanNodeTest"},{"p":"main.java","l":"HuffmanTree"},{"p":"test.java","l":"HuffmanTreeTest"}]
