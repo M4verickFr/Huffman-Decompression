@@ -20,14 +20,22 @@ public class HuffmanDecode {
      *
      * @see HuffmanDecode#getTree()
      */
-    HuffmanTree tree;
+    private HuffmanTree tree;
+
+
+    /**
+     * Le texte a decoder a l'aide de l'arbre de Huffman.
+     *
+     * @see HuffmanDecode#getBinaryString()
+     */
+    private String binaryString = "";
 
     /**
      * Le texte decoder a l'aide de l'arbre de Huffman.
      *
      * @see HuffmanDecode#getResult()
      */
-    String result = "";
+    private String result = "";
 
     /**
      * Constructeur HuffmanDecode.
@@ -51,10 +59,10 @@ public class HuffmanDecode {
 
         // task5_read_binaries
         HuffmanFile binaryFile = new HuffmanFile(binaryFilePath);
-        String binaryString = binaryFile.readBin();
+        this.binaryString = binaryFile.readBin();
 
         // task6_decode_binaries
-        this.result = this.tree.decode(binaryString);
+        this.result = this.tree.decode(this.binaryString);
 
         // task7_write_result
         String outputFilePath = HuffmanFile.getOutputFilePath(freqFile);
@@ -72,19 +80,30 @@ public class HuffmanDecode {
     /**
      * Retourne la chaine binaire decoder a l'aide de l'arbre de Huffman.
      *
-     * @return la chaine binaire.
+     * @return le text decoder.
      */
     public String getResult() {
         return result;
     }
 
     /**
+     * Retourne la chaine binaire à decoder a l'aide de l'arbre de Huffman.
+     *
+     * @return la chaine binaire.
+     */
+    public String getBinaryString() {
+        return binaryString;
+    }
+
+    /**
      * Créer l'objet HuffmanDecode.
-     * Affichage le résultat, et l'arbre de Huffman généré.
+     * Affichage du résultat.
      */
     public static void main(String[] args) {
         HuffmanDecode huffmanDecode = new HuffmanDecode(args[0], args[1]);
-        System.out.println(huffmanDecode.getResult());
-        System.out.println(huffmanDecode.getTree());
+
+        System.out.println(huffmanDecode.getBinaryString() +
+                " -> " + 
+                huffmanDecode.getResult());
     }
 }
