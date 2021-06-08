@@ -17,6 +17,8 @@ import java.util.Enumeration;
  * </ul>
  * </p>
  *
+ * @see HuffmanNode
+ *
  * @author M4verickFr
  */
 public class HuffmanTree {
@@ -41,11 +43,11 @@ public class HuffmanTree {
     /**
      * Constructeur HuffmanTree.
      * <p>
-     * A la construction d'un object HuffmanTree, le noeud "current" correspond au noeud racine.
+     * A la construction d'un objet HuffmanTree, le noeud "current" correspond au noeud racine.
      * </p>
      *
      * @param frequency
-     *                  Dictionnaire contenu les fréquences de chaque caractère.
+     *                  Dictionnaire contenant les fréquences de chaque caractère.
      *
      * @see HuffmanTree#root
      * @see HuffmanTree#current
