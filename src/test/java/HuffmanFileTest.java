@@ -21,68 +21,68 @@ import java.util.*;
  * </ul>
  * </p>
  *
- * @see HuffmanFile
- *
  * @author M4verickFr
+ * @see HuffmanFile
  */
 public class HuffmanFileTest {
 
-    /**
-     * Verifie que le fichier fréquence est lu correctement.
-     */
-    @Test
-    public void readFreq() {
-        HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_freq.txt");
-        Dictionary frequency = file.readFreq();
-        Assert.assertEquals("1", frequency.get("b"));
-        Assert.assertEquals("2", frequency.get("o"));
-    }
+  /**
+   * Verifie que le fichier fréquence est lu correctement.
+   */
+  @Test
+  public void readFreq() {
+    HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_freq.txt");
+    Dictionary frequency = file.readFreq();
+    Assert.assertEquals("1", frequency.get("b"));
+    Assert.assertEquals("2", frequency.get("o"));
+  }
 
-    /**
-     * Verifie que le fichier binaire est lu correctement.
-     */
-    @Test
-    public void readBin() {
-        HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_comp.txt");
-        Assert.assertEquals("010111000111100101", file.readBin());
-    }
+  /**
+   * Verifie que le fichier binaire est lu correctement.
+   */
+  @Test
+  public void readBin() {
+    HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_comp.txt");
+    Assert.assertEquals("010111000111100101", file.readBin());
+  }
 
-    /**
-     * Verifie que le fichier résultat est écrit correctement.
-     *
-     * @throws FileNotFoundException
-     */
-    @Test
-    public void writeResult() throws FileNotFoundException {
-        HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_result.txt");
-        file.writeResult("bonjour");
+  /**
+   * Verifie que le fichier résultat est écrit correctement.
+   *
+   * @throws FileNotFoundException
+   */
+  @Test
+  public void writeResult() throws FileNotFoundException {
+    HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_result.txt");
+    file.writeResult("bonjour");
 
-        String resultString = "";
-        File resultFile = new File("src/test/resources/exemple/exemple_result.txt");
-        Scanner myReader = new Scanner(resultFile);
-        while (myReader.hasNextLine()) {
-            resultString += myReader.nextLine();
-        }
-        Assert.assertEquals("bonjour", resultString);
+    String resultString = "";
+    File resultFile = new File("src/test/resources/exemple/exemple_result.txt");
+    Scanner myReader = new Scanner(resultFile);
+    while (myReader.hasNextLine()) {
+      resultString += myReader.nextLine();
     }
+    Assert.assertEquals("bonjour", resultString);
+  }
 
-    /**
-     * Verifie que le chemin du fichier retourné est correct.
-     */
-    @Test
-    public void getPath() {
-        String path = "src/test/resources/exemple/exemple_freq.txt";
-        HuffmanFile file = new HuffmanFile(path);
-        String pathTest = FileSystems.getDefault().getPath(path).normalize().toAbsolutePath().toString();
-        Assert.assertEquals(pathTest, file.getPath());
-    }
+  /**
+   * Verifie que le chemin du fichier retourné est correct.
+   */
+  @Test
+  public void getPath() {
+    String path = "src/test/resources/exemple/exemple_freq.txt";
+    HuffmanFile file = new HuffmanFile(path);
+    String pathTest = FileSystems.getDefault().getPath(path).normalize().toAbsolutePath()
+        .toString();
+    Assert.assertEquals(pathTest, file.getPath());
+  }
 
-    /**
-     * Verifie que le nom du fichier retourné est correct.
-     */
-    @Test
-    public void getName() {
-        HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_freq.txt");
-        Assert.assertEquals("exemple_freq.txt", file.getName());
-    }
+  /**
+   * Verifie que le nom du fichier retourné est correct.
+   */
+  @Test
+  public void getName() {
+    HuffmanFile file = new HuffmanFile("src/test/resources/exemple/exemple_freq.txt");
+    Assert.assertEquals("exemple_freq.txt", file.getName());
+  }
 }
